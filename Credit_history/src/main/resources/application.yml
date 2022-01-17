@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:8080/credithistory1
+    username: postgres
+    password: admin123
+  jpa:
+    show-sql: true
+    properties:
+      hibernate :
+        dialect : org.hibernate.dialect.PostgreSQLDialect
+
+    hibernate:
+      ddl-auto: update
+  application:
+    name : consume-api
+
+server:
+
+  springdoc:
+    swagger-ui.path: /swagger-ui/
+  port: 9092
+
+integration:
+  creditUrl: http://localhost:9091/api/getHistory
+  ipsUrl: http://localhost:9093/api/crimeHistory
+  historyUrl: http://localhost:9091/api/getHistoryByPanNo
